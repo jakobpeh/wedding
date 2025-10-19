@@ -3,67 +3,131 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jakob & Vilhelm – Bröllop</title>
+  <title>Jakob & Partner – Bröllop</title>
   <style>
-    /* Enkel, ljus och läsbar */
     :root {
-      --bg: #ffffff;
-      --ink: #111827;
-      --muted: #6b7280;
+      --ink: #1f2937;
+      --muted: #4b5563;
       --brand: #2563eb;
-      --card: #f8fafc;
       --radius: 12px;
     }
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin:0; padding:0; }
     body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
       font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: none;
     }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
     .wrap { max-width: 900px; margin: 0 auto; padding: 24px; }
+
+    /* ---- FIXED HELSIDEBILD ---- */
+    body::before {
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Carte_ch%C3%A2teau_de_Fiac.jpg/960px-Carte_ch%C3%A2teau_de_Fiac.jpg?20210427133945');
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      z-index:-2;
+      filter: brightness(1.05) contrast(1.05);
+    }
+
+    /* ---- LJUS GENOMSKINLIG YTA OVANPÅ ---- */
+    body::after {
+      content:"";
+      position:fixed;
+      inset:0;
+      background: rgba(255,255,255,0.6); /* halvtransparent vitt skikt */
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index:-1;
+    }
+
+    /* ---- HERO ---- */
     header {
-      background: var(--card);
-      border-bottom: 1px solid #e5e7eb;
+      text-align:center;
+      color: var(--ink);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
     }
-    h1 { margin: 8px 0 0; font-size: 32px; }
-    .subtitle { color: var(--muted); margin: 6px 0 20px; }
-    nav a {
-      display: inline-block; margin-right: 14px; color: var(--brand); text-decoration: none;
+    .hero__nav a { color: var(--ink); opacity:.85; margin:0 10px; font-weight:600; }
+    .hero__nav a:hover { opacity:1; text-decoration:underline; }
+    .eyebrow {
+      display:inline-block;
+      letter-spacing:.12em; text-transform:uppercase; font-size:12px;
+      padding:.35rem .6rem; border-radius:999px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(6px);
+      border:1px solid rgba(0,0,0,0.05);
+      margin-top: 8px;
+      color: var(--ink);
     }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 28px 0; border-bottom: 1px solid #eef2f7; }
+    h1 { font-size: clamp(32px,6vw,56px); margin: 10px 0 8px; color: var(--ink); }
+    .subtitle { color: var(--muted); margin-bottom:24px; }
+    .cta {
+      display:inline-flex; align-items:center; gap:10px;
+      border:1px solid rgba(0,0,0,.1);
+      background: rgba(255,255,255,.8);
+      color: var(--ink); padding: 12px 18px; border-radius:999px; font-weight:600;
+      box-shadow: 0 10px 25px rgba(0,0,0,.1);
+      backdrop-filter: blur(6px);
+    }
+    .cta:hover { transform:translateY(-1px); box-shadow:0 14px 38px rgba(0,0,0,.18); }
+
+    /* ---- SECTIONS MED FROSTAD VIT RUTA ---- */
+    section { padding: 40px 0; }
     .card {
-      background: var(--card);
-      border: 1px solid #e5e7eb;
       border-radius: var(--radius);
       padding: 16px;
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.08);
     }
+    h2 { font-size:26px; margin-bottom:12px; color: var(--ink); }
+    p,strong { color: var(--ink); }
+
     .btn {
-      display: inline-block; padding: 10px 14px; border-radius: 10px;
-      background: var(--brand); color: #fff; text-decoration: none; font-weight: 600;
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:10px;
+      background: var(--brand);
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
     }
-    .btn:hover { filter: brightness(1.05); }
-    footer { text-align: center; color: var(--muted); padding: 24px 0 60px; }
-    /* Liten förbättring för läsbarhet på smala skärmar */
-    @media (min-width: 700px) {
-      .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .btn:hover { filter:brightness(1.05); }
+
+    footer {
+      text-align:center;
+      color: var(--muted);
+      padding:40px 0 80px;
+    }
+
+    @media (min-width:700px){
+      .grid-2 {display:grid;grid-template-columns:1fr 1fr;gap:16px;}
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="wrap">
-      <nav aria-label="Navigation">
-        <a href="#info">Info</a>
-        <a href="#schema">Schema</a>
-        <a href="#faq">FAQ</a>
-        <a href="#osa">OSA</a>
-      </nav>
-      <h1>Jakob & Partner</h1>
-      <p class="subtitle">Vi gifter oss – välkommen att fira med oss!</p>
+  <header id="top">
+    <div class="hero__nav">
+      <a href="#info">Info</a>
+      <a href="#schema">Schema</a>
+      <a href="#faq">FAQ</a>
+      <a href="#osa">OSA</a>
     </div>
+    <span class="eyebrow">Vi gifter oss</span>
+    <h1>Jakob & Partner</h1>
+    <p class="subtitle">Vi längtar efter att fira dagen med er – här hittar du allt ni behöver veta.</p>
+    <a class="cta" href="#osa">OSA & information</a>
   </header>
 
   <main class="wrap">
@@ -78,7 +142,7 @@
           <p><strong>Klädkod:</strong> Kavaj</p>
         </div>
         <div>
-          <p class="subtitle">Uppdatera texten här med dina faktiska uppgifter. Allt är enkelt och statiskt – inget krångel.</p>
+          <p>Uppdatera texten här med dina faktiska uppgifter. Allt är enkelt och statiskt – inget krångel.</p>
         </div>
       </div>
     </section>
@@ -105,9 +169,11 @@
 
     <section id="osa">
       <h2>OSA</h2>
-      <p>Vänligen svara senast 1 april 2026.</p>
-      <a class="btn" href="#" onclick="alert('Lägg in länken till ditt Google Form här!'); return false;">Öppna OSA-formulär</a>
-      <p class="subtitle">Tips: skapa ett Google Form och klistra in länken i knappen ovan.</p>
+      <div class="card">
+        <p>Vänligen svara senast 1 april 2026.</p>
+        <a class="btn" href="#" onclick="alert('Lägg in länken till ditt Google Form här!'); return false;">Öppna OSA-formulär</a>
+        <p>Tips: skapa ett Google Form och klistra in länken i knappen ovan.</p>
+      </div>
     </section>
   </main>
 
