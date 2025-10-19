@@ -1,141 +1,119 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Jakob & Partner – Bröllop</title>
-<meta name="description" content="Välkommen att fira vårt bröllop! Här hittar du datum, plats, schema, FAQ och anmälan (OSA)." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
---bg: #0e0f11; /* canvas background */
---paper: #ffffff; /* card background */
---ink: #0b0b0c; /* text color */
---muted: #6b7280; /* secondary text */
---brand: #8b5cf6; /* accent */
---brand-2: #f59e0b; /* secondary accent */
---ring: rgba(139,92,246,.35);
---radius: 16px;
---shadow: 0 10px 30px rgba(0,0,0,.15);
-}
-/* Reset & base */
-*, *::before, *::after { box-sizing: border-box; }
-html, body { height: 100%; }
-body{
-margin:0; background: var(--bg); color: var(--ink);
-font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-line-height: 1.6;
--webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-}
-a{ color: var(--brand); text-decoration: none; }
-a:hover{ text-decoration: underline; }
-img{ max-width: 100%; height: auto; display: block; }
-.wrap{ width: min(1100px, 92vw); margin: 0 auto; }
-
-
-/* Header / Hero */
-header.hero{
-position: relative; isolation:isolate; color: #fff;
-background: radial-gradient(1200px 500px at 60% -10%, rgba(139,92,246,.35), transparent 60%),
-radial-gradient(900px 500px at -10% 20%, rgba(245,158,11,.2), transparent 60%),
-#0c0d0f;
-overflow:hidden;
-}
-.hero::before{
-content:""; position:absolute; inset:0; z-index:-1;
-background: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2400&auto=format&fit=crop') center/cover no-repeat;
-filter: brightness(.45);
-transform: scale(1.05);
-}
-nav{
-display:flex; align-items:center; justify-content:space-between; gap:16px;
-padding: 20px 0;
-}
-.nav-brand{ font-family: "Playfair Display", serif; font-weight:700; letter-spacing:.5px; font-size: clamp(20px, 2vw, 24px); }
-.nav-links a{ color:#fff; opacity:.9; margin-left:20px; font-weight:500; }
-.nav-links a:hover{ opacity:1; }
-
-
-.hero-inner{ padding: clamp(60px, 10vw, 140px) 0 90px; text-align:center; }
-.eyebrow{ display:inline-block; letter-spacing:.12em; text-transform:uppercase; font-size:12px; padding:.35rem .6rem; border-radius:999px; background: rgba(255,255,255,.14); backdrop-filter:saturate(180%) blur(6px); }
-h1{
-font-family: "Playfair Display", serif;
-font-size: clamp(36px, 8vw, 72px);
-line-height:1.1; margin: 18px auto 10px;
-}
-.subtitle{ font-size: clamp(16px, 2.6vw, 22px); color: #e5e7eb; margin-bottom: 26px; }
-.cta{
-display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,.22);
-background: linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.06));
-color:#fff; padding: 12px 18px; border-radius: 999px; font-weight:600;
-box-shadow: 0 10px 30px rgba(0,0,0,.25);
-}
-.cta:hover{ transform: translateY(-1px); box-shadow:0 14px 38px rgba(0,0,0,.32); text-decoration:none; }
-
-
-/* Card sections */
-section{ padding: 70px 0; background: var(--bg); }
-.card{ background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow); overflow:hidden; }
-.card .head{ padding: 28px 28px 0; }
-.card h2{ font-family: "Playfair Display", serif; font-weight:700; margin:0 0 6px; font-size: clamp(24px, 4.5vw, 36px); }
-.card p.lead{ color: var(--muted); margin:0 0 22px; }
-.card .body{ padding: 0 28px 28px; }
-
-
-/* Two columns */
-.grid-2{ display:grid; grid-template-columns: 1fr; gap:24px; }
-@media (min-width: 900px){ .grid-2{ grid-template-columns: 1.1fr .9fr; } }
-
-
-/* Details / meta list */
-.meta{ display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:14px; margin-top: 10px; }
-.meta li{ list-style:none; background: #f9fafb; border:1px solid #eef2f7; padding:12px 14px; border-radius:12px; }
-.meta strong{ display:block; font-size:12px; text-transform:uppercase; letter-spacing:.08em; color: #6b7280; }
-
-
-/* Schedule */
-.schedule{ display:grid; grid-template-columns: 1fr; gap:14px; }
-.slot{ border:1px solid #eef2f7; border-radius:14px; padding:15px; background:#fcfcfd; }
-.slot time{ font-weight:600; color:#111827; }
-.slot .where{ color: var(--muted); font-size: 14px; }
-
-
-/* FAQ */
-details{ border:1px solid #eef2f7; border-radius:14px; padding:16px 18px; background:#fcfcfd; }
-details + details{ margin-top:12px; }
-summary{ cursor:pointer; font-weight:600; }
-
-
-/* Gallery */
-.gallery{ display:grid; grid-template-columns: repeat(2,1fr); gap:10px; }
-.gallery img{ border-radius: 12px; aspect-ratio: 4/3; object-fit: cover; }
-@media (min-width: 800px){ .gallery{ grid-template-columns: repeat(4,1fr);} }
-
-
-/* Footer */
-footer{ color:#9ca3af; text-align:center; padding: 38px 0 80px; }
-
-
-/* Buttons */
-.btn{ display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; border:1px solid #e5e7eb; font-weight:600; background:#fff; }
-.btn:hover{ box-shadow: 0 6px 24px rgba(0,0,0,.08); transform: translateY(-1px); text-decoration:none; }
-
-
-/* Floating RSVP */
-.rsvp-fab{
-position: fixed; inset:auto 14px 14px auto; z-index:50;
-background: var(--brand); color:#fff; border:none; border-radius:999px; padding:12px 16px; font-weight:700; box-shadow:0 10px 30px rgba(0,0,0,.25);
-}
-.rsvp-fab:hover{ filter: brightness(1.05); transform:translateY(-1px); }
-
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce){
-*, *::before, *::after { animation: none !important; transition: none !important; }
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jakob & Vilhelm – Bröllop</title>
+  <style>
+    /* Enkel, ljus och läsbar */
+    :root {
+      --bg: #ffffff;
+      --ink: #111827;
+      --muted: #6b7280;
+      --brand: #2563eb;
+      --card: #f8fafc;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 24px; }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid #e5e7eb;
+    }
+    h1 { margin: 8px 0 0; font-size: 32px; }
+    .subtitle { color: var(--muted); margin: 6px 0 20px; }
+    nav a {
+      display: inline-block; margin-right: 14px; color: var(--brand); text-decoration: none;
+    }
+    nav a:hover { text-decoration: underline; }
+    section { padding: 28px 0; border-bottom: 1px solid #eef2f7; }
+    .card {
+      background: var(--card);
+      border: 1px solid #e5e7eb;
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .btn {
+      display: inline-block; padding: 10px 14px; border-radius: 10px;
+      background: var(--brand); color: #fff; text-decoration: none; font-weight: 600;
+    }
+    .btn:hover { filter: brightness(1.05); }
+    footer { text-align: center; color: var(--muted); padding: 24px 0 60px; }
+    /* Liten förbättring för läsbarhet på smala skärmar */
+    @media (min-width: 700px) {
+      .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    }
+  </style>
 </head>
 <body>
 
+  <header>
+    <div class="wrap">
+      <nav aria-label="Navigation">
+        <a href="#info">Info</a>
+        <a href="#schema">Schema</a>
+        <a href="#faq">FAQ</a>
+        <a href="#osa">OSA</a>
+      </nav>
+      <h1>Jakob & Partner</h1>
+      <p class="subtitle">Vi gifter oss – välkommen att fira med oss!</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="info">
+      <h2>Det viktigaste</h2>
+      <div class="card grid-2">
+        <div>
+          <p><strong>Datum:</strong> 24 maj 2026</p>
+          <p><strong>Tid:</strong> Vigsel 14:00</p>
+          <p><strong>Plats:</strong> Storkyrkan, Gamla stan</p>
+          <p><strong>Middag & fest:</strong> Norrmälarstrand 12</p>
+          <p><strong>Klädkod:</strong> Kavaj</p>
+        </div>
+        <div>
+          <p class="subtitle">Uppdatera texten här med dina faktiska uppgifter. Allt är enkelt och statiskt – inget krångel.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="schema">
+      <h2>Schema</h2>
+      <div class="card">
+        <p>13:30 – Samling utanför kyrkan</p>
+        <p>14:00 – Vigsel</p>
+        <p>15:00 – Mingel & transport</p>
+        <p>17:30 – Middag & tal</p>
+        <p>21:30 – Dans & fest</p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ</h2>
+      <div class="card">
+        <p><strong>Presenter?</strong> Er närvaro är gåvan! Vill ni ändå ge något uppskattar vi bidrag till bröllopsresan.</p>
+        <p><strong>Specialkost?</strong> Ange i OSA så ordnar vi det.</p>
+        <p><strong>Barn?</strong> Vuxenfest på kvällen – hör av dig vid frågor.</p>
+      </div>
+    </section>
+
+    <section id="osa">
+      <h2>OSA</h2>
+      <p>Vänligen svara senast 1 april 2026.</p>
+      <a class="btn" href="#" onclick="alert('Lägg in länken till ditt Google Form här!'); return false;">Öppna OSA-formulär</a>
+      <p class="subtitle">Tips: skapa ett Google Form och klistra in länken i knappen ovan.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Jakob & Partner — 2026</p>
+  </footer>
+
+</body>
+</html>
