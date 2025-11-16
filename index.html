@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jakob & Partner – Bröllop</title>
+  <title>Jakob & Vilhelm – Bröllop</title>
   <style>
     :root {
       --ink: #1f2937;
@@ -13,13 +13,13 @@
     }
     * { box-sizing: border-box; margin:0; padding:0; }
     body {
-      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font: 16px/1.6 system-ui, -apple-system, sans-serif;
       color: var(--ink);
       background: none;
     }
     a { color: var(--brand); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 900px; margin: 0 auto; padding: 24px; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 150px; }
 
     /* ---- FIXED HELSIDEBILD ---- */
     body::before {
@@ -39,7 +39,7 @@
       content:"";
       position:fixed;
       inset:0;
-      background: rgba(255,255,255,0.6); /* halvtransparent vitt skikt */
+      background: rgb(255, 243, 217,1); /* halvtransparent vitt skikt */
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
       z-index:-1;
@@ -113,48 +113,67 @@
     @media (min-width:700px){
       .grid-2 {display:grid;grid-template-columns:1fr 1fr;gap:16px;}
     }
+
+
+    .tightHeader {
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: -7.5px;
+      color: #C24A3F;
+      font-size: 80px;
+      text-decoration: underline;
+    }
+
+    .tightSubHeader {
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: -1px;
+      color: #C24A3F;
+      font-size: 30px;
+    }
+
+    .centeredText {
+      text-align: center;
+      letter-spacing: -0.5px;
+      font-family: 'Poppins', sans-serif;
+      min-height: 80vh;
+    }
   </style>
 </head>
 <body>
 
   <header id="top">
-    <div class="hero__nav">
-      <a href="#info">Info</a>
-      <a href="#schema">Schema</a>
-      <a href="#faq">FAQ</a>
-      <a href="#osa">OSA</a>
-    </div>
-    <span class="eyebrow">Vi gifter oss</span>
-    <h1>Jakob & Partner</h1>
-    <p class="subtitle">Vi längtar efter att fira dagen med er – här hittar du allt ni behöver veta.</p>
-    <a class="cta" href="#osa">OSA & information</a>
+    <p class="tightHeader">Jakob x Vilhelm</p>
+    <p class="tightSubHeader">18.7.2026</p>
   </header>
 
   <main class="wrap">
-    <section id="info">
-      <h2>Det viktigaste</h2>
-      <div class="card grid-2">
+    <section id="Info">
+      <h2 style="text-align:center;font-family: 'Poppins', sans-serif;letter-spacing: -0.5px;">Vi ska gifta oss!</h2>
+        <div class="centeredText">
         <div>
-          <p><strong>Datum:</strong> 24 maj 2026</p>
-          <p><strong>Tid:</strong> Vigsel 14:00</p>
-          <p><strong>Plats:</strong> Storkyrkan, Gamla stan</p>
-          <p><strong>Middag & fest:</strong> Norrmälarstrand 12</p>
-          <p><strong>Klädkod:</strong> Kavaj</p>
+          <p><strong>Lördagen den 18nde juli</strong> gifter vi oss på Chateau de Fiac på den franska landsbygden</p>
         </div>
-        <div>
-          <p>Uppdatera texten här med dina faktiska uppgifter. Allt är enkelt och statiskt – inget krångel.</p>
         </div>
-      </div>
     </section>
 
-    <section id="schema">
-      <h2>Schema</h2>
-      <div class="card">
-        <p>13:30 – Samling utanför kyrkan</p>
-        <p>14:00 – Vigsel</p>
-        <p>15:00 – Mingel & transport</p>
-        <p>17:30 – Middag & tal</p>
-        <p>21:30 – Dans & fest</p>
+    <section id="Hitta hit">
+      <h2 style="text-align:center;font-family: 'Poppins', sans-serif;letter-spacing: -0.5px;">Hitta dit</h2>
+      <div class="centeredText">
+          <p><strong> Chateau de Fiac </strong></p>
+        <p>Le Chateau de Fiac Hôtel & Spa
+            51, Rue Chaminade
+            81500 FIAC
+        </p><br>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.395211663081!2d1.9022270124282818!3d43.70233527097933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ae7fdce359e44f%3A0xdb559da243e8126a!2sCh%C3%A2teau%20de%20Fiac%20H%C3%B4tel%20%26%20Spa!5e0!3m2!1ssv!2sse!4v1763300349995!5m2!1ssv!2sse"
+                  width="600"
+                  height="450"
+                  style="border:0;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+
+          </iframe>
       </div>
     </section>
 
@@ -178,7 +197,7 @@
   </main>
 
   <footer>
-    <p>© Jakob & Partner — 2026</p>
+    <p>© Jakob & Vilhelm — 2026</p>
   </footer>
 
 </body>
