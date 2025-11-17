@@ -120,7 +120,7 @@
       font-family: 'Poppins', sans-serif;
       letter-spacing: -7.5px;
       color: #C24A3F;
-      font-size: 80px;
+      font-size: 60px;
       text-decoration: underline;
     }
 
@@ -138,6 +138,18 @@
       font-family: 'Poppins', sans-serif;
       min-height: 80vh;
     }
+
+    .map-wrapper {
+      max-width: 800px;      /* 👈 max size on desktop */
+      margin: 0 auto;        /* center the map */
+    }
+
+    .map-wrapper iframe {
+      width: 100%;           /* 👈 fill the wrapper on small screens */
+      height: 450px;         /* adjust as you like */
+      border: 0;
+    }
+
   </style>
 </head>
 <body>
@@ -165,15 +177,17 @@
             51, Rue Chaminade
             81500 FIAC
         </p><br>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.395211663081!2d1.9022270124282818!3d43.70233527097933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ae7fdce359e44f%3A0xdb559da243e8126a!2sCh%C3%A2teau%20de%20Fiac%20H%C3%B4tel%20%26%20Spa!5e0!3m2!1ssv!2sse!4v1763300349995!5m2!1ssv!2sse"
-                  width="600"
-                  height="450"
-                  style="border:0;"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade">
-
-          </iframe>
+          <div class="map-wrapper">
+              <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.395211663081!2d1.9022270124282818!3d43.70233527097933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ae7fdce359e44f%3A0xdb559da243e8126a!2sCh%C3%A2teau%20de%20Fiac%20H%C3%B4tel%20%26%20Spa!5e0!3m2!1ssv!2sse!4v1763300349995!5m2!1ssv!2sse"
+                      /* width="600"
+                      /* height="450"
+                      /* style="border:0;"
+                      /* allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+          </div>
       </div>
     </section>
 
