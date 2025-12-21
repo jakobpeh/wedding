@@ -22,18 +22,30 @@
     a:hover { text-decoration: underline; }
     .wrap { max-width: 900px; margin: 0 auto; }
 
-    /* ---- FIXED HELSIDEBILD ---- */
+
+
+}    /* ---- FIXED HELSIDEBILD ---- */
     body::before {
       content:"";
       position:fixed;
       inset:0;
-      background-image:url('https://github.com/jakobpeh/wedding/blob/main/solrosbakgrund.png?raw=true');
+      background-image:url('https://github.com/jakobpeh/wedding/blob/main/solrosbakgrund.jpeg?raw=true');
       background-size:cover;
       background-position:center;
       filter: brightness(1.05) contrast(1.05);
       z-index: -1;
-      opacity: 0,1;
+      opacity: 0;
+      animation: bgFadeIn 0.8s ease forwards;
     }
+
+    @keyframes bgFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+        opacity: 0.3; /* final transparency */
+        }
+      }
 
     .tightHeader {
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -80,14 +92,24 @@
       filter: hue-rotate(120deg);
       display: block;
       margin: 0 auto;
+      object-fit: cover;
     }
 
     .fiac1 {
       filter: brightness(100%);
-      opacity: 0.3;
       width: 20%;
       display: block;
       margin: 0 auto;
+      object-fit: cover;
+    }
+
+    img {
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        }
+
+    img.loaded {
+        opacity: 1;
     }
 
   </style>
@@ -96,9 +118,9 @@
 
   <header id="top">
       <br><br>
-      <img src="https://github.com/jakobpeh/wedding/blob/main/fiac1.png?raw=true" width="1000" alt="fiac1" class="fiac1">
+      <img src="https://github.com/jakobpeh/wedding/blob/main/fiac1.png?raw=true" onload="this.classList.add('loaded')" width="1000" height="500" alt="" class="fiac1" loading="lazy">
       <br><br><br><br><br>
-      <img src="https://github.com/jakobpeh/wedding/blob/main/Logo.png.png?raw=true" width="300" alt="logo" class="logo">
+      <img src="https://github.com/jakobpeh/wedding/blob/main/Logo.png.png?raw=true" onload="this.classList.add('loaded')" width="300" height="200" alt="" class="logo" loading="lazy">
     <p class="tightHeader">Jakob x Vilhelm</p>
     <p class="tightSubHeader">18.7.2026</p>
   </header>
