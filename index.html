@@ -22,17 +22,24 @@
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
-
-
     }
+
+    .pageFade {
+        opacity: 0;
+        animation: fadeIn2 5s ease forwards;
+    }
+
+    @keyframes fadeIn2 {
+        to { opacity: 1; }
+     }
 
     @media (max-width: 768px) {
       body {
         background-size: 140%;            /* ⬅ zooms out */
         background-position: right center;
         background-attachment: fixed;
-  }
-}
+        }
+        }
 
 
     a { color: var(--brand); text-decoration: none; }
@@ -62,7 +69,15 @@
       color: #8E372E;
       font-size: 30px;
       text-align: center;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
 
     .centeredText {
       text-align: center;
@@ -87,7 +102,6 @@
     }
 
     .logo {
-      filter: hue-rotate(120deg);
       display: block;
       margin: 0 auto;
       object-fit: cover;
@@ -101,6 +115,16 @@
       object-fit: cover;
     }
 
+    .title {
+        display: block;
+        margin: 40px auto;   /* centers horizontally */
+        max-width: 60%;      /* makes it smaller */
+        height: auto;
+
+        position: relative;
+        z-index: 2;
+    }
+
     img {
         opacity: 0;
         transition: opacity 2s ease;
@@ -110,37 +134,59 @@
         opacity: 1;
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .roligaBilder {
+        display: block;
+        margin: 40px auto;   /* centers horizontally */
+        max-width: 60%;      /* makes it smaller */
+        height: auto;
+
+        position: relative;
+        z-index: 2;
+    }
+
   </style>
 </head>
 <body>
+<div class="pageFade" style="opacity: 0;">
 
   <header id="top">
       <br><br><br><br><br>
       <img src="https://github.com/jakobpeh/wedding/blob/main/jakovilly.png?raw=true" onload="this.classList.add('loaded')" width="300" height="300" alt="" class="fiac1">
       <br><br>
-      <img src="https://github.com/jakobpeh/wedding/blob/main/Logo.png.png?raw=true" onload="this.classList.add('loaded')" width="100" height="70" alt="" class="logo">
+      <img src="https://github.com/jakobpeh/wedding/blob/main/Logo%20J+V.png?raw=true" onload="this.classList.add('loaded')" width="100" height="70" alt="" class="logo">
       <br><br>
-      <p class="tightSubHeader">18.7.2026</p>
+      <p class="tightSubHeader" style="opacity:0;">18.7.2026</p>
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   </header>
 
   <main class="wrap">
     <section id="Info">
-      <h2 style="text-align:center;font-family: 'Poppins', sans-serif;letter-spacing: -0.5px; color: #8E372E; font-size: 18px;">VI SKA GIFTA OSS!</h2>
+        <img src="https://github.com/jakobpeh/wedding/blob/main/viskagiftaoss.png?raw=true" onload="this.classList.add('loaded')" alt="VI SKA GIFTA OSS" class="title">
         <div class="centeredText">
         <div>
           <p><strong>Lördagen den 18nde juli</strong> gifter vi oss på Chateau de Fiac på den franska landsbygden</p>
         </div>
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br>
     </section>
+
+
+      <section id="fiskar">
+          <img src="https://github.com/jakobpeh/wedding/blob/main/fiskar.png?raw=true" onload="this.classList.add('loaded')" alt="Fiskar" class="roligaBilder">
+          <br><br><br><br><br>
+      </section>
 
 
 
     <section id="Boende">
-        <h2 style="text-align:center;font-family: 'Poppins', sans-serif;letter-spacing: -0.5px; color: #8E372E;">BOENDE</h2>
+        <img src="https://github.com/jakobpeh/wedding/blob/main/boende.png?raw=true" onload="this.classList.add('loaded')" alt="BOENDE" class="title">
         <div class="centeredText">
-                <br><p style="font-weight: bold; font-style: italic;">Boenden i Lavaur</p>
+                <p style="font-weight: bold; font-style: italic;">Boenden i Lavaur</p>
                 <p>Då bröllopet kommer att ta plats på Chateau de Fiac, ligger byn Lavaur mycket lägligt till.
                     Därifån kommer det att abonneras bussar till och från slottet under den 18nde. Därför rekommenderar
                 vi er att boka ett boende där, och har samlat nedan några alternativ</p>
@@ -183,7 +229,7 @@
 
 
       <section id="Schema">
-          <h2 style="text-align:center;font-family: 'Poppins', sans-serif;letter-spacing: -0.5px; color: #8E372E;">SCHEMA</h2>
+          <img src="https://github.com/jakobpeh/wedding/blob/main/schema.png?raw=true" onload="this.classList.add('loaded')" alt="SCHEMA" class="title">
           <div class="centeredText">
               <div>
                   <p><strong>17 juli </strong><br>Drink på Sabournac 19.00<br><br>
@@ -198,7 +244,7 @@
 
 
       <section id="OSA">
-          <h2 style="text-align:center;font-family: 'Poppins', sans-serif;letter-spacing: -0.5px; color: #8E372E;">OSA</h2>
+          <img src="https://github.com/jakobpeh/wedding/blob/main/osa.png?raw=true" onload="this.classList.add('loaded')" alt="OSA" class="title">
           <div class="centeredText">
               <div>
                   <p>Vi hoppas att du vill fira dagen med oss!
@@ -216,7 +262,8 @@
 
 
       <section id="Toastmasters">
-          <h2 style="text-align:center;font-family: 'Poppins', sans-serif;letter-spacing: -0.5px; color: #8E372E;">TOASTMASTERS</h2>
+          <img src="https://github.com/jakobpeh/wedding/blob/main/toastmasters.png?raw=true" onload="this.classList.add('loaded')" alt="TOASTMASTERS" class="title">
+
           <div class="centeredText">
               <div>
                   <p>Under dagen är det våra bröder <strong>Felix Pehrson</strong> och <strong>Nils Larsson Regnström</strong>  som håller i trådarna. De kommer att se till att tal, överraskningar och tider flyter på som de ska.
@@ -232,7 +279,7 @@
 
 
       <section id="Klädkod">
-          <h2 style="text-align:center;font-family: 'Poppins', sans-serif;letter-spacing: -0.5px; color: #8E372E;">KLÄDKOD</h2>
+          <img src="https://github.com/jakobpeh/wedding/blob/main/kl%C3%A4dkod.png?raw=true" onload="this.classList.add('loaded')" alt="KLÄDKOD" class="title">
           <div class="centeredText">
               <div>
                   <p>
@@ -248,7 +295,7 @@
 
 
       <section id="Övrigt">
-          <h2 style="text-align:center;font-family: 'Poppins', sans-serif;letter-spacing: -0.5px; color: #8E372E;">ÖVRIGT</h2>
+          <img src="https://github.com/jakobpeh/wedding/blob/main/Q&A.png?raw=true" onload="this.classList.add('loaded')" alt="ÖVRIGT" class="title">
           <div class="centeredText">
               <div>
                   <p>...</p>
@@ -260,7 +307,7 @@
 
 
       <section id="Hitta hit">
-          <h2 style="text-align:center;font-family: 'Poppins', sans-serif;letter-spacing: -0.5px; color: #8E372E;">HITTA DIT</h2>
+          <img src="https://github.com/jakobpeh/wedding/blob/main/hittadit.png?raw=true" onload="this.classList.add('loaded')" alt="HITTA DIT" class="title">
           <div class="centeredText">
               <p><strong> Chateau de Fiac </strong></p>
               <p>Le Chateau de Fiac Hôtel & Spa 51, Rue Chaminade 81500 FIAC</p><br>
@@ -281,7 +328,7 @@
 
 
       <section id="Roliga saker att hitta på">
-          <h2 style="text-align:center;font-family: 'Poppins', sans-serif;letter-spacing: -0.5px; color: #8E372E;">ROLIGA SAKER ATT HITTA PÅ</h2>
+          <img src="https://github.com/jakobpeh/wedding/blob/main/Sakeratthittap%C3%A5.png?raw=true" onload="this.classList.add('loaded')" alt="ROLIGA SAKER ATT HITTA PÅ" class="title">
           <div class="centeredText">
               <div>
                   <p>...</p>
@@ -297,6 +344,6 @@
   <footer>
       <p>© Jakob & Vilhelm — 2026</p>
   </footer>
-
+</div>
 </body>
 </html>
