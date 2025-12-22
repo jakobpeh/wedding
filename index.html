@@ -16,12 +16,13 @@
       font: 16px/1.6 system-ui, -apple-system, sans-serif;
       color: var(--ink);
       background-color: #D8E3F8;
-        margin: 0;
-        background-image: url('https://raw.githubusercontent.com/jakobpeh/wedding/main/solrosbakgrund.jpeg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
+      margin: 0;
+      background: none;
+      /*background-image: url('https://raw.githubusercontent.com/jakobpeh/wedding/main/solrosbakgrund.jpeg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;*/
     }
 
     .pageFade {
@@ -33,12 +34,12 @@
         to { opacity: 1; }
      }
 
-    @media (max-width: 768px) {
+    /*@media (max-width: 768px) {
       body {
         background-size: 100%;            /* ⬅ zooms out */
         background-position: right center;
         }
-        }
+        }*/
 
 
     a { color: var(--brand); text-decoration: none; }
@@ -47,9 +48,25 @@
 
 
 
-}    /* ---- FIXED HELSIDEBILD ---- */
+    /* ---- FIXED HELSIDEBILD ---- */
     body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("https://raw.githubusercontent.com/jakobpeh/wedding/main/solrosbakgrund.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
     }
+
+    @media (max-width: 768px) {
+        body::before {
+        background-position: right center;
+        }
+    }
+
+
 
     .tightHeader {
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
